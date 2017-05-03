@@ -13,7 +13,7 @@ export class AppComponent {
 	form: FormGroup;
 	constructor(private fb:FormBuilder){
 		this.form = fb.group({
-			codigo:'',
+			codigo:['',UserValidator.verificarEspacios],
 			nombre:['',Validators.compose([
 				Validators.required,
 				Validators.maxLength(5),
